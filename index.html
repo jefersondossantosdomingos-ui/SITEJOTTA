@@ -1,0 +1,618 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jotta Engenharia · Laboratório e Gestão da Qualidade em Obras</title>
+<meta name="description" content="Laboratório de solos, concreto e CAUQ em Pimenta Bueno (RO) e região, e gestão da qualidade de obras com sistemas próprios: controle tecnológico, sondagem, laudos e aplicativos sob medida.">
+<meta name="theme-color" content="#0E0F11">
+<link rel="icon" href="img/icone.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Jotta Engenharia · Inovação e precisão a serviço da engenharia">
+<meta property="og:description" content="Laboratório especializado em ensaios de solos, CAUQ e concreto, integrado a sistemas e aplicativos para gestão e controle da qualidade.">
+<meta property="og:image" content="https://jottaengenharia.net.br/img/og.jpg">
+<meta property="og:url" content="https://jottaengenharia.net.br/">
+<meta property="og:locale" content="pt_BR">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ProfessionalService","name":"Jotta Engenharia","legalName":"JSD Engenharia Ltda","taxID":"69.825.334/0001-09",
+ "url":"https://jottaengenharia.net.br/","image":"https://jottaengenharia.net.br/img/og.jpg","telephone":"+55 69 99376-6279","email":"eng.controle.tecnologico@gmail.com",
+ "address":{"@type":"PostalAddress","addressLocality":"Pimenta Bueno","addressRegion":"RO","addressCountry":"BR"},
+ "areaServed":"Pimenta Bueno e região","description":"Laboratório de solos, concreto e CAUQ e gestão da qualidade de obras."}
+</script>
+<style>
+:root{
+  --preto:#0E0F11; --grafite:#17191D; --grafite-2:#22252B; --linha:#2E323A;
+  --amarelo:#F4B400; --amarelo-2:#FFC83A; --branco:#FFFFFF; --texto:#E9EAEC; --mudo:#A4A8B1;
+  --papel:#F5F5F2; --papel-2:#FFFFFF; --tinta:#16181C; --tinta-mudo:#5B606A; --borda:#E2E2DC;
+  --raio:14px; --larg:1160px;
+}
+*{box-sizing:border-box}
+figure{margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{margin:0;font:400 16px/1.6 Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--tinta);background:var(--papel);-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3,.marca{font-family:Montserrat,"Segoe UI",Arial,sans-serif;line-height:1.12;margin:0;text-wrap:balance}
+.cx{max-width:var(--larg);margin:0 auto;padding-left:max(20px,env(safe-area-inset-left));padding-right:max(20px,env(safe-area-inset-right))}
+.rotulo{display:inline-block;font:700 12px/1 Montserrat,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:var(--amarelo)}
+.rotulo.escuro{color:#9A7000}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 22px;border-radius:10px;font:700 15px/1 Montserrat,sans-serif;text-decoration:none;transition:transform .15s,background .15s,box-shadow .15s;border:2px solid transparent;cursor:pointer}
+.btn:hover{transform:translateY(-1px)}
+.btn-am{background:var(--amarelo);color:var(--preto);box-shadow:0 8px 24px rgba(244,180,0,.25)}
+.btn-am:hover{background:var(--amarelo-2)}
+.btn-linha{border-color:rgba(255,255,255,.35);color:var(--branco)}
+.btn-linha:hover{border-color:var(--amarelo);color:var(--amarelo)}
+.btn svg{width:20px;height:20px;flex:none}
+
+/* topo */
+.topo{position:sticky;top:0;z-index:50;background:rgba(14,15,17,.92);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.06)}
+.topo .cx{display:flex;align-items:center;gap:24px;height:68px}
+.topo .logo img{height:38px;width:auto}
+.topo nav{margin-left:auto;display:flex;gap:26px}
+.topo nav a{color:var(--texto);text-decoration:none;font:600 14px/1 Montserrat,sans-serif;opacity:.85}
+.topo nav a:hover{color:var(--amarelo);opacity:1}
+.topo nav a[hidden]{display:none}
+.topo .btn{padding:10px 16px;font-size:13px}
+.menu-bt{display:none;margin-left:auto;background:none;border:0;color:var(--branco);padding:8px;cursor:pointer}
+.menu-bt svg{width:28px;height:28px}
+
+/* hero */
+.hero{position:relative;background:radial-gradient(120% 90% at 85% 40%,#1F2230 0%,var(--preto) 60%);color:var(--branco);overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:44px 44px;-webkit-mask-image:linear-gradient(90deg,#000,transparent 70%);mask-image:linear-gradient(90deg,#000,transparent 70%)}
+.hero .cx{position:relative;display:grid;grid-template-columns:1.25fr .75fr;gap:40px;align-items:end;padding-top:90px;padding-bottom:0}
+.hero .texto{padding-bottom:110px}
+.hero .foto{position:relative;align-self:end}
+.hero .foto img{width:100%;max-width:470px;margin-left:auto;height:auto;border-radius:22px 22px 0 0;-webkit-mask-image:linear-gradient(180deg,#000 72%,transparent 100%);mask-image:linear-gradient(180deg,#000 72%,transparent 100%)}
+.hero .foto::before{content:"";position:absolute;right:-30px;bottom:40px;width:78%;height:70%;border:3px solid var(--amarelo);border-radius:24px;transform:rotate(4deg);opacity:.55}
+.hero .foto figcaption{position:absolute;left:0;bottom:70px;background:var(--amarelo);color:var(--preto);padding:12px 16px;border-radius:12px;font:700 14px/1.25 Montserrat,sans-serif;box-shadow:0 12px 30px rgba(0,0,0,.35)}
+.hero .foto figcaption small{display:block;font:500 12px/1.3 Inter,sans-serif;opacity:.8}
+.hero h1{font-size:clamp(34px,5.6vw,62px);font-weight:800;max-width:17ch;margin:18px 0 20px}
+.hero h1 em{font-style:normal;color:var(--amarelo)}
+.hero p.lead{font-size:clamp(16px,1.6vw,19px);color:#D4D6DA;max-width:58ch;margin:0 0 34px}
+.hero .acoes{display:flex;flex-wrap:wrap;gap:14px}
+.faixa-estrada{height:10px;background:repeating-linear-gradient(90deg,var(--amarelo) 0 46px,transparent 46px 74px),var(--preto);background-size:auto;background-position:center;opacity:.95}
+.selos{display:flex;flex-wrap:wrap;gap:12px 28px;margin-top:46px;color:#C9CBD0;font-size:14px}
+.selos span{display:flex;align-items:center;gap:8px}
+.selos svg{width:18px;height:18px;color:var(--amarelo)}
+
+/* seções */
+section{padding:96px 0}
+.cab{max-width:760px;margin-bottom:46px}
+.cab h2{font-size:clamp(28px,3.6vw,42px);font-weight:800;margin:12px 0 14px}
+.cab p{color:var(--tinta-mudo);margin:0;font-size:17px}
+
+/* duas frentes */
+.frentes{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.frente{display:flex;flex-direction:column}.frente a.mais{margin-top:auto;align-self:flex-start}
+.publico{display:flex;flex-wrap:wrap;gap:10px;margin:-18px 0 34px}
+.publico span{background:var(--papel-2);border:1px solid var(--borda);border-radius:999px;padding:8px 14px;font:600 13px/1 Montserrat,sans-serif}
+.nota-tec{margin-top:26px;display:flex;gap:14px;align-items:center;flex-wrap:wrap;color:var(--tinta-mudo);font-size:15px}
+.nota-tec a{font:700 14px/1 Montserrat,sans-serif;color:var(--tinta);text-decoration:none;border-bottom:2px solid var(--amarelo);padding-bottom:4px}
+.tec{background:#EDECE6}
+.frente{position:relative;background:var(--papel-2);border:1px solid var(--borda);border-radius:var(--raio);padding:34px;overflow:hidden}
+.frente::after{content:"";position:absolute;left:0;top:0;bottom:0;width:6px;background:var(--amarelo)}
+.frente .ico{width:54px;height:54px;border-radius:12px;background:var(--preto);display:grid;place-items:center;margin-bottom:20px}
+.frente .ico svg{width:28px;height:28px;color:var(--amarelo)}
+.frente h3{font-size:24px;font-weight:800;margin-bottom:10px}
+.frente p{color:var(--tinta-mudo);margin:0 0 18px}
+.frente ul{list-style:none;margin:0 0 24px;padding:0;display:grid;gap:9px}
+.frente li{display:flex;gap:10px;align-items:flex-start}
+.frente li::before{content:"";flex:none;width:8px;height:8px;margin-top:9px;border-radius:2px;background:var(--amarelo)}
+.frente a.mais{font:700 14px/1 Montserrat,sans-serif;color:var(--tinta);text-decoration:none;border-bottom:2px solid var(--amarelo);padding-bottom:4px}
+
+/* laboratório */
+.lab{background:var(--preto);color:var(--texto)}
+.lab .cab p{color:var(--mudo)}
+.lab .cab h2{color:var(--branco)}
+.abas{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:26px}
+.aba{background:var(--grafite);border:1px solid var(--linha);color:var(--texto);padding:12px 18px;border-radius:999px;font:700 14px/1 Montserrat,sans-serif;cursor:pointer;display:flex;align-items:center;gap:9px}
+.aba svg{width:18px;height:18px;color:var(--amarelo)}
+.aba[aria-selected="true"]{background:var(--amarelo);color:var(--preto);border-color:var(--amarelo)}
+.aba[aria-selected="true"] svg{color:var(--preto)}
+.painel{background:var(--grafite);border:1px solid var(--linha);border-radius:var(--raio);overflow:hidden}
+.painel[hidden]{display:none}
+.painel .topo-p{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding:22px 26px;border-bottom:3px solid var(--amarelo);background:#121316}
+.painel .topo-p h3{color:var(--branco);font-size:22px;font-weight:800}
+.painel .topo-p span{color:var(--mudo);font-size:14px}
+.ensaios{display:grid;grid-template-columns:1fr 1fr}
+.ensaio{display:flex;justify-content:space-between;gap:16px;padding:14px 26px;border-bottom:1px solid var(--linha)}
+.ensaio:nth-child(odd){border-right:1px solid var(--linha)}
+.ensaio b{font-weight:500;color:var(--texto)}
+.ensaio small{flex:none;font:700 12px/1.9 Montserrat,sans-serif;color:var(--amarelo);letter-spacing:.02em;white-space:nowrap}
+.lab-rodape{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:26px}
+.mini{display:flex;gap:14px;align-items:flex-start;background:var(--grafite);border:1px solid var(--linha);border-radius:var(--raio);padding:20px}
+.mini svg{flex:none;width:30px;height:30px;color:var(--amarelo)}
+.mini b{display:block;color:var(--branco);font:700 16px/1.3 Montserrat,sans-serif;margin-bottom:3px}
+.mini span{color:var(--mudo);font-size:14px}
+.obs{margin-top:18px;color:var(--mudo);font-size:14px}
+.obs b{color:var(--amarelo)}
+
+/* gestão */
+.gestao-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{background:var(--papel-2);border:1px solid var(--borda);border-radius:var(--raio);padding:28px;display:flex;flex-direction:column}
+.card .num{font:800 13px/1 Montserrat,sans-serif;color:#9A7000;letter-spacing:.14em;margin-bottom:16px}
+.card h3{font-size:19px;font-weight:800;margin-bottom:10px}
+.card p{color:var(--tinta-mudo);margin:0;font-size:15px}
+.card.destaque{background:var(--preto);color:var(--texto);border-color:var(--preto)}
+.card.destaque h3{color:var(--branco)}
+.card.destaque p{color:var(--mudo)}
+.card.destaque .num{color:var(--amarelo)}
+.fluxo{margin-top:46px;background:var(--papel-2);border:1px solid var(--borda);border-radius:var(--raio);padding:30px}
+.fluxo h3{font-size:18px;font-weight:800;margin-bottom:22px}
+.passos{display:grid;grid-template-columns:repeat(5,1fr);gap:0;counter-reset:p}
+.passo{position:relative;padding:0 14px 0 0}
+.passo::before{counter-increment:p;content:counter(p);display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:var(--amarelo);color:var(--preto);font:800 15px/1 Montserrat,sans-serif;margin-bottom:12px;position:relative;z-index:1}
+.passo::after{content:"";position:absolute;top:18px;left:38px;right:0;border-top:3px dashed #E5C35A}
+.passo:last-child::after{display:none}
+.passo b{display:block;font:700 15px/1.3 Montserrat,sans-serif;margin-bottom:4px}
+.passo span{font-size:14px;color:var(--tinta-mudo)}
+
+/* publicações */
+.pubs{background:var(--preto);color:var(--texto)}
+.pubs .cab h2{color:var(--branco)} .pubs .cab p{color:var(--mudo)}
+.pub-lista{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:22px;align-items:start}
+.pub{background:var(--grafite);border:1px solid var(--linha);border-radius:var(--raio);overflow:hidden;display:flex;flex-direction:column;min-width:0}
+.pub.fixado{border-color:var(--amarelo)}
+.pub-midia{position:relative;background:#000}
+.pub-midia img{width:100%;aspect-ratio:4/3;object-fit:cover;cursor:zoom-in}
+.pub-midia .mais-fotos{position:absolute;right:10px;bottom:10px;background:rgba(14,15,17,.82);color:#fff;font:700 12px/1 Montserrat,sans-serif;padding:7px 10px;border-radius:999px}
+.pub-midia iframe{display:block;width:100%;aspect-ratio:16/9;border:0}
+.pub-miniaturas{display:flex;gap:6px;padding:6px;background:#111214;overflow-x:auto}
+.pub-miniaturas img{width:64px;height:48px;object-fit:cover;border-radius:6px;cursor:pointer;opacity:.75;flex:none}
+.pub-miniaturas img.ativa{opacity:1;outline:2px solid var(--amarelo)}
+.pub-corpo{padding:20px 22px 22px;display:flex;flex-direction:column;gap:10px;flex:1}
+.pub-data{font:700 11px/1 Montserrat,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--amarelo)}
+.pub h3{color:var(--branco);font-size:19px;font-weight:800}
+.pub-texto{color:#C9CBD0;font-size:15px;white-space:pre-line;overflow-wrap:anywhere;display:-webkit-box;-webkit-line-clamp:6;-webkit-box-orient:vertical;overflow:hidden}
+.pub-texto.aberto{display:block}
+.pub-texto a{color:var(--amarelo)}
+.pub-texto .tag{color:var(--amarelo);font-weight:500}
+.pub-acoes{display:flex;flex-wrap:wrap;gap:8px 16px;margin-top:auto;padding-top:6px}
+.pub-acoes button,.pub-acoes a{background:none;border:0;padding:0;color:var(--branco);font:700 13px/1.4 Montserrat,sans-serif;cursor:pointer;text-decoration:none;border-bottom:2px solid var(--amarelo)}
+.pub-vazia{color:var(--mudo)}
+.visor{position:fixed;inset:0;z-index:90;background:rgba(0,0,0,.92);display:flex;align-items:center;justify-content:center;padding:20px}
+.visor[hidden]{display:none}
+.visor img{max-width:100%;max-height:100%;object-fit:contain;border-radius:8px}
+.visor button{position:absolute;top:max(14px,env(safe-area-inset-top));right:max(14px,env(safe-area-inset-right));background:var(--amarelo);color:var(--preto);border:0;border-radius:999px;width:44px;height:44px;font:800 20px/1 Montserrat,sans-serif;cursor:pointer}
+
+/* sobre */
+.sobre{background:var(--papel)}
+.sobre-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:56px;align-items:center}
+.sobre-fotos{position:relative}
+.sobre-fotos .cap{border-radius:var(--raio);aspect-ratio:4/3.4;object-fit:cover;object-position:75% 50%;width:100%;height:auto}
+.sobre-fotos .eu{position:absolute;right:-18px;bottom:-26px;width:42%;border-radius:12px;border:5px solid var(--papel);aspect-ratio:1/1.05;object-fit:cover;object-position:top;height:auto}
+.sobre h2{font-size:clamp(28px,3.4vw,40px);font-weight:800;margin:12px 0 18px}
+.sobre p{color:#3F434B;margin:0 0 14px}
+.valores{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:22px}
+.valores div{background:var(--papel-2);border-radius:12px;padding:14px 16px;border:1px solid var(--borda);font-size:14px;color:var(--tinta-mudo)}
+.valores b{display:block;font:700 15px/1.3 Montserrat,sans-serif;color:var(--tinta);margin-bottom:2px}
+
+/* contato */
+.contato{background:var(--amarelo);color:var(--preto);padding:84px 0}
+.contato-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center}
+.contato h2{font-size:clamp(30px,4vw,48px);font-weight:800;margin-bottom:14px}
+.contato p{margin:0 0 26px;font-size:17px;color:#2B2410}
+.contato .btn-pr{background:var(--preto);color:var(--branco)}
+.contato .btn-pr:hover{background:#25282E}
+.dados{background:var(--preto);color:var(--texto);border-radius:var(--raio);padding:30px;display:grid;gap:18px}
+.dados > a,.dados > div{display:flex;gap:14px;align-items:center;text-decoration:none}
+.dados svg{flex:none;width:24px;height:24px;color:var(--amarelo)}
+.dados small{display:block;color:var(--mudo);font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+.dados strong{font:700 17px/1.3 Montserrat,sans-serif;color:var(--branco);word-break:break-word}
+
+footer{background:var(--preto);color:var(--mudo);padding:34px 0;font-size:13px}
+footer .cx{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;align-items:center}
+footer img{height:30px;width:auto}
+
+.whats{position:fixed;right:max(18px,env(safe-area-inset-right));bottom:max(18px,env(safe-area-inset-bottom));z-index:60;width:58px;height:58px;border-radius:50%;background:#25D366;display:grid;place-items:center;box-shadow:0 10px 26px rgba(0,0,0,.3)}
+.whats svg{width:32px;height:32px;color:#fff}
+
+@media (max-width:960px){
+  .frentes,.sobre-grid,.contato-grid{grid-template-columns:1fr}
+  .publico{margin-top:-10px}
+  .gestao-grid{grid-template-columns:1fr 1fr}
+  .lab-rodape{grid-template-columns:1fr}
+  .passos{grid-template-columns:1fr;gap:18px}
+  .passo{display:grid;grid-template-columns:38px 1fr;column-gap:14px;padding:0}
+  .passo::before{grid-row:span 2;margin:0}
+  .passo::after{top:38px;left:18px;right:auto;bottom:-18px;border-top:0;border-left:3px dashed #E5C35A}
+  .sobre-fotos{max-width:520px}
+  .hero .cx{grid-template-columns:1fr;gap:0}
+  .hero .foto{order:-1;max-width:300px;margin:0 auto 26px;width:100%}
+  .hero .foto img{border-radius:22px;-webkit-mask-image:none;mask-image:none}
+  .hero .foto::before{display:none}
+  .hero .foto figcaption{bottom:-14px;left:50%;transform:translateX(-50%);white-space:nowrap}
+  .hero .texto{padding-top:20px}
+}
+@media (max-width:760px){
+  .topo nav{display:none;position:absolute;top:68px;left:0;right:0;flex-direction:column;gap:0;background:var(--preto);border-bottom:1px solid var(--linha)}
+  .topo nav.aberto{display:flex}
+  .topo nav a{padding:16px 20px;border-top:1px solid var(--linha)}
+  .menu-bt{display:block}
+  .topo .btn{display:none}
+  .ensaios{grid-template-columns:1fr}
+  .ensaio:nth-child(odd){border-right:0}
+  .gestao-grid{grid-template-columns:1fr}
+  section{padding:72px 0}
+  .hero .cx{padding-top:48px}
+  .hero .texto{padding-bottom:72px}
+  .valores{grid-template-columns:1fr}
+  .sobre-fotos .eu{right:-6px}
+}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-zap" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.4-.3z"/></symbol>
+  <symbol id="i-lab" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6M10 3v6L4.5 18.5A1.7 1.7 0 0 0 6 21h12a1.7 1.7 0 0 0 1.5-2.5L14 9V3"/><path d="M7 15h10"/></symbol>
+  <symbol id="i-gestao" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M7 15l3-3 3 2 4-5"/><path d="M7 19h10"/></symbol>
+  <symbol id="i-app" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M10 18h4M9 7h6M9 11h6"/></symbol>
+  <symbol id="i-solo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 20h18M5 16h14M7 12h10"/><path d="M12 3v9M9 6l3-3 3 3"/></symbol>
+  <symbol id="i-concreto" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><ellipse cx="12" cy="5" rx="6" ry="2.2"/><path d="M6 5v13c0 1.2 2.7 2.2 6 2.2s6-1 6-2.2V5"/><circle cx="10" cy="11" r=".9" fill="currentColor"/><circle cx="14" cy="14" r=".9" fill="currentColor"/><circle cx="11" cy="16.5" r=".9" fill="currentColor"/></symbol>
+  <symbol id="i-cauq" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M8 3L4 21M16 3l4 18M12 4v3M12 10.5v3M12 17v3"/></symbol>
+  <symbol id="i-campo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7h11v9H2zM13 10h4l4 3v3h-8"/><circle cx="6" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></symbol>
+  <symbol id="i-crea" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6.5 8-6.5s8 2.5 8 6.5"/><path d="M15.5 18.5l1.5 1.5 3-3"/></symbol>
+  <symbol id="i-doc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h9l4 4v16H6z"/><path d="M14 2v5h5M9 12h7M9 16h5"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></symbol>
+  <symbol id="i-predio" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V5l8-2v18M12 8h8v13M8 8v.01M8 12v.01M8 16v.01M16 12v.01M16 16v.01M2 21h20"/></symbol>
+</svg>
+
+<header class="topo">
+  <div class="cx">
+    <a class="logo" href="#inicio" aria-label="Jotta Engenharia — início"><img src="img/logo-claro.png" alt="Jotta Engenharia" width="146" height="38"></a>
+    <nav id="menu" aria-label="Seções">
+      <a href="#servicos">Serviços</a>
+      <a href="#laboratorio">Laboratório</a>
+      <a href="#gestao">Gestão e consultoria</a>
+      <a href="#tecnologia">Tecnologia</a>
+      <a href="#publicacoes" data-so-com-posts hidden>Publicações</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <a class="btn btn-am" href="https://wa.me/5569993766279?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20Jotta%20Engenharia%20e%20gostaria%20de%20um%20or%C3%A7amento." target="_blank" rel="noopener">Orçamento</a>
+    <button class="menu-bt" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+  </div>
+</header>
+
+<main id="inicio">
+<section class="hero" aria-labelledby="t-hero">
+  <div class="cx">
+   <div class="texto">
+    <span class="rotulo">Pimenta Bueno · Rondônia e região</span>
+    <h1 id="t-hero">Inovação e precisão <em>a serviço da engenharia.</em></h1>
+    <p class="lead">Laboratório especializado em ensaios de solos, CAUQ e concreto, integrado a sistemas e aplicativos para gestão e controle da qualidade.</p>
+    <div class="acoes">
+      <a class="btn btn-am" href="https://wa.me/5569993766279?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20Jotta%20Engenharia%20e%20gostaria%20de%20um%20or%C3%A7amento." target="_blank" rel="noopener"><svg><use href="#i-zap"/></svg>Solicitar orçamento</a>
+      <a class="btn btn-linha" href="#servicos">Conhecer os serviços</a>
+    </div>
+    <div class="selos">
+      <span><svg><use href="#i-check"/></svg>Normas ABNT, DNIT e GOINFRA</span>
+      <span><svg><use href="#i-check"/></svg>Responsável técnico CREA-RO</span>
+      <span><svg><use href="#i-check"/></svg>Coleta e ensaios na obra</span>
+    </div>
+   </div>
+   <figure class="foto">
+    <img src="img/jeferson.jpg" alt="Jeferson Domingos, sócio administrador da JSD Engenharia Ltda" width="479" height="511">
+    <figcaption>Jeferson Domingos<small>Sócio Adm · JSD ENGENHARIA LTDA</small></figcaption>
+   </figure>
+  </div>
+</section>
+<div class="faixa-estrada" aria-hidden="true"></div>
+
+<section id="servicos" aria-labelledby="t-serv">
+  <div class="cx">
+    <div class="cab">
+      <span class="rotulo escuro">O que fazemos</span>
+      <h2 id="t-serv">Três frentes, um compromisso: obra dentro da especificação</h2>
+      <p>O laboratório executa os ensaios. A gestão da qualidade e a consultoria cuidam da obra como um todo. A tecnologia dá agilidade e rastreabilidade a tudo isso.</p>
+    </div>
+    <div class="frentes">
+      <article class="frente">
+        <div class="ico"><svg><use href="#i-lab"/></svg></div>
+        <h3>Laboratório físico</h3>
+        <p>Ensaios tecnológicos de solos, concreto e misturas asfálticas, em laboratório e em campo.</p>
+        <ul>
+          <li>Solos: granulometria, limites, Proctor, ISC/CBR e densidade in situ</li>
+          <li>Concreto: dosagem, moldagem e ruptura de CPs, slump e testemunhos</li>
+          <li>CAUQ: Marshall DNIT 031/2024, teor de ligante, Rice e grau de compactação</li>
+          <li>Coleta de amostras e ensaios de campo na obra</li>
+        </ul>
+        <a class="mais" href="#laboratorio">Ver todos os ensaios</a>
+      </article>
+      <article class="frente">
+        <div class="ico"><svg><use href="#i-gestao"/></svg></div>
+        <h3>Gestão da qualidade e consultoria</h3>
+        <p>Serviços técnicos e consultoria para construtoras, supervisoras, projetistas, consórcios e empresas de engenharia.</p>
+        <ul>
+          <li>Implantação e gestão do Sistema de Gestão da Qualidade (SGQ)</li>
+          <li>Apoio técnico à supervisão: conformidade, notas técnicas e pareceres</li>
+          <li>Gestão do controle tecnológico, medições e relatórios</li>
+          <li>Consultoria técnica para equipes de obra e laboratório</li>
+        </ul>
+        <a class="mais" href="#gestao">Ver os serviços de gestão</a>
+      </article>
+      <article class="frente">
+        <div class="ico"><svg><use href="#i-app"/></svg></div>
+        <h3>Tecnologia</h3>
+        <p>Sistemas e aplicativos próprios para controle tecnológico, sondagem e laudos — com a marca da sua empresa.</p>
+        <ul>
+          <li>Planos de sondagem com mapa, GPS e boletins Trado e SPT</li>
+          <li>Lançamento de ensaios por foto da ficha</li>
+          <li>Equipe sincronizada, aprovação do gestor e laudos em PDF</li>
+          <li>Aplicativos sob medida para o seu fluxo</li>
+        </ul>
+        <a class="mais" href="#tecnologia">Conhecer os sistemas</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="laboratorio" class="lab" aria-labelledby="t-lab">
+  <div class="cx">
+    <div class="cab">
+      <span class="rotulo">Laboratório de solos, concreto e CAUQ</span>
+      <h2 id="t-lab">Ensaios conforme as normas que a sua obra exige</h2>
+      <p>Atendimento a construtoras, projetistas e supervisoras em Pimenta Bueno e região, seguindo as normas ABNT, DNIT e as especificações da GOINFRA.</p>
+    </div>
+
+    <div class="abas" role="tablist" aria-label="Grupos de ensaios">
+      <button class="aba" role="tab" id="tab-solos" aria-controls="p-solos" aria-selected="true"><svg><use href="#i-solo"/></svg>Solos</button>
+      <button class="aba" role="tab" id="tab-concreto" aria-controls="p-concreto" aria-selected="false"><svg><use href="#i-concreto"/></svg>Concreto</button>
+      <button class="aba" role="tab" id="tab-cauq" aria-controls="p-cauq" aria-selected="false"><svg><use href="#i-cauq"/></svg>CAUQ</button>
+      <button class="aba" role="tab" id="tab-campo" aria-controls="p-campo" aria-selected="false"><svg><use href="#i-campo"/></svg>Em campo</button>
+    </div>
+
+    <div class="painel" id="p-solos" role="tabpanel" aria-labelledby="tab-solos">
+      <div class="topo-p"><h3>Solos</h3><span>10 ensaios · laboratório e campo</span></div>
+      <div class="ensaios">
+        <div class="ensaio"><b>Preparação de amostras</b><small>NBR 6457</small></div>
+        <div class="ensaio"><b>Granulometria com sedimentação</b><small>NBR 7181</small></div>
+        <div class="ensaio"><b>Limite de liquidez</b><small>NBR 6459</small></div>
+        <div class="ensaio"><b>Limite de plasticidade</b><small>NBR 7180</small></div>
+        <div class="ensaio"><b>Massa específica dos grãos</b><small>NBR 6458</small></div>
+        <div class="ensaio"><b>Compactação Proctor (N, I e M)</b><small>NBR 7182</small></div>
+        <div class="ensaio"><b>ISC / CBR e expansão</b><small>DNIT 172-ME</small></div>
+        <div class="ensaio"><b>Densidade in situ (frasco de areia)</b><small>NBR 7185</small></div>
+        <div class="ensaio"><b>Umidade (speedy e estufa)</b><small>DNER-ME 052</small></div>
+        <div class="ensaio"><b>Equivalente de areia</b><small>DNER-ME 054</small></div>
+      </div>
+    </div>
+    <div class="painel" id="p-concreto" role="tabpanel" aria-labelledby="tab-concreto" hidden>
+      <div class="topo-p"><h3>Concreto, cimento e agregados</h3><span>12 ensaios</span></div>
+      <div class="ensaios">
+        <div class="ensaio"><b>Dosagem experimental (traço)</b><small>NBR 12655</small></div>
+        <div class="ensaio"><b>Moldagem e cura de corpos de prova</b><small>NBR 5738</small></div>
+        <div class="ensaio"><b>Compressão axial (4 CPs a cada 30 m³)</b><small>NBR 5739</small></div>
+        <div class="ensaio"><b>Controle estatístico da resistência</b><small>NBR 12655</small></div>
+        <div class="ensaio"><b>Abatimento do tronco de cone (slump)</b><small>NBR 16889</small></div>
+        <div class="ensaio"><b>Tração por compressão diametral</b><small>NBR 7222</small></div>
+        <div class="ensaio"><b>Extração e ensaio de testemunhos</b><small>NBR 7680</small></div>
+        <div class="ensaio"><b>Cimento: resistência à compressão</b><small>NBR 7215</small></div>
+        <div class="ensaio"><b>Agregados: granulometria</b><small>NBR 17054</small></div>
+        <div class="ensaio"><b>Agregados: material pulverulento</b><small>NBR 16973</small></div>
+        <div class="ensaio"><b>Agregados: massa unitária</b><small>NBR 16972</small></div>
+        <div class="ensaio"><b>Agregados: massa específica e absorção</b><small>NBR 16916</small></div>
+      </div>
+    </div>
+    <div class="painel" id="p-cauq" role="tabpanel" aria-labelledby="tab-cauq" hidden>
+      <div class="topo-p"><h3>CAUQ — concreto asfáltico</h3><span>9 ensaios</span></div>
+      <div class="ensaios">
+        <div class="ensaio"><b>Controle conforme especificação</b><small>DNIT 031/2024-ES</small></div>
+        <div class="ensaio"><b>Marshall: estabilidade e fluência</b><small>NBR 15785</small></div>
+        <div class="ensaio"><b>Teor de ligante (extração)</b><small>DNER-ME 053</small></div>
+        <div class="ensaio"><b>Granulometria da mistura</b><small>DNER-ME 083</small></div>
+        <div class="ensaio"><b>Densidade máxima medida (Rice)</b><small>NBR 15619</small></div>
+        <div class="ensaio"><b>Tração por compressão diametral</b><small>DNIT 136-ME</small></div>
+        <div class="ensaio"><b>Grau de compactação e espessura</b><small>&nbsp;</small></div>
+        <div class="ensaio"><b>Agregados: abrasão Los Angeles</b><small>NBR 16974</small></div>
+        <div class="ensaio"><b>Agregados: adesividade ao ligante</b><small>DNER-ME 078</small></div>
+      </div>
+    </div>
+    <div class="painel" id="p-campo" role="tabpanel" aria-labelledby="tab-campo" hidden>
+      <div class="topo-p"><h3>Em campo</h3><span>na sua obra</span></div>
+      <div class="ensaios">
+        <div class="ensaio"><b>Coleta de amostras na obra</b><small>&nbsp;</small></div>
+        <div class="ensaio"><b>Densidade in situ e umidade</b><small>NBR 7185</small></div>
+        <div class="ensaio"><b>Moldagem de CPs de concreto na obra</b><small>NBR 5738</small></div>
+        <div class="ensaio"><b>Extração de corpos de prova de pavimento</b><small>&nbsp;</small></div>
+      </div>
+    </div>
+
+    <div class="lab-rodape">
+      <div class="mini"><svg><use href="#i-campo"/></svg><div><b>Coleta na obra</b><span>Amostras e ensaios de campo</span></div></div>
+      <div class="mini"><svg><use href="#i-crea"/></svg><div><b>Responsável técnico</b><span>Registro no CREA-RO</span></div></div>
+      <div class="mini"><svg><use href="#i-doc"/></svg><div><b>Orçamento rápido</b><span>Preços e ensaios sob consulta</span></div></div>
+    </div>
+    <p class="obs"><b>Observação:</b> tabela de preços e demais ensaios sob consulta.</p>
+  </div>
+</section>
+
+<section id="gestao" aria-labelledby="t-gest">
+  <div class="cx">
+    <div class="cab">
+      <span class="rotulo escuro">Gestão da qualidade e consultoria</span>
+      <h2 id="t-gest">Serviços técnicos e consultoria para quem constrói, supervisiona e projeta</h2>
+      <p>A Jotta atua ao lado da sua equipe como consultora: organiza o sistema da qualidade, confere a obra frente ao projeto e às especificações e entrega os registros técnicos que a fiscalização pede.</p>
+    </div>
+    <div class="publico" aria-label="Para quem">
+      <span>Construtoras</span><span>Supervisoras</span><span>Projetistas</span><span>Consórcios</span><span>Empresas de engenharia</span>
+    </div>
+    <div class="gestao-grid">
+      <article class="card destaque"><span class="num">01</span><h3>Sistema de Gestão da Qualidade</h3><p>Implantação e gestão do SGQ da obra: procedimentos, planos de inspeção e ensaios, registros e rastreabilidade.</p></article>
+      <article class="card"><span class="num">02</span><h3>Apoio à supervisão e fiscalização</h3><p>Análise de conformidade com o projeto e as especificações (DNIT, GOINFRA, ABNT), notas técnicas e pareceres.</p></article>
+      <article class="card"><span class="num">03</span><h3>Gestão do controle tecnológico</h3><p>Plano de amostragem, acompanhamento dos ensaios, análise dos resultados e liberação dos serviços executados.</p></article>
+      <article class="card"><span class="num">04</span><h3>Medições e relatórios técnicos</h3><p>Medições de controle tecnológico, memórias de cálculo, boletins de ensaios e relatórios periódicos da qualidade.</p></article>
+      <article class="card"><span class="num">05</span><h3>Acompanhamento de campo</h3><p>Diário de obra (RDO), registro dos serviços de terraplenagem, pavimentação e concreto e dos ensaios de campo.</p></article>
+      <article class="card destaque"><span class="num">06</span><h3>Consultoria técnica</h3><p>Orientação a construtoras, supervisoras e projetistas sobre normas, especificações e controle de qualidade.</p></article>
+    </div>
+    <p class="nota-tec">Na gestão, a Jotta pode usar os próprios sistemas para agilizar registros e relatórios — mas a consultoria não depende deles. <a href="#tecnologia">Ver a tecnologia</a></p>
+  </div>
+</section>
+
+<section id="tecnologia" class="tec" aria-labelledby="t-tec">
+  <div class="cx">
+    <div class="cab">
+      <span class="rotulo escuro">Tecnologia · sistemas e aplicativos</span>
+      <h2 id="t-tec">Sistemas próprios para o controle tecnológico</h2>
+      <p>Aplicativos desenvolvidos pela Jotta para laboratórios, empresas de sondagem e projetistas: cada ensaio tem autor, data, local e aprovação — e o relatório sai pronto. Podem ser contratados separadamente ou fazer parte da gestão da qualidade.</p>
+    </div>
+    <div class="gestao-grid">
+      <article class="card destaque"><span class="num">01</span><h3>Funciona em campo</h3><p>Aplicativo no celular, instalado como app, que continua funcionando sem sinal e sincroniza quando a internet volta.</p></article>
+      <article class="card"><span class="num">02</span><h3>Planos de sondagem</h3><p>Plano importado, pontos no mapa, GPS em cada furo, fotos com coordenada e boletins Trado (NBR 9603) e SPT (NBR 6484).</p></article>
+      <article class="card"><span class="num">03</span><h3>Lançamento por foto</h3><p>O laboratorista fotografa a ficha de bancada e o sistema preenche o ensaio. Ele confere e envia; o gestor aprova no celular.</p></article>
+      <article class="card"><span class="num">04</span><h3>Equipe e aprovação</h3><p>Vários celulares no mesmo ensaio, sincronizados na nuvem e funcionando sem sinal. Só o que o gestor aprova vira laudo.</p></article>
+      <article class="card"><span class="num">05</span><h3>Laudos e relatórios</h3><p>Laudos em PDF, em lote, com a sua identidade visual, além de KML e AGS 4 para projetistas.</p></article>
+      <article class="card destaque"><span class="num">06</span><h3>Sistemas sob medida</h3><p>Aplicativos com a marca da sua empresa, desenhados para o seu fluxo — da sondagem ao relatório aprovado.</p></article>
+    </div>
+    <div class="fluxo">
+      <h3>Do furo de sondagem ao laudo aprovado</h3>
+      <div class="passos">
+        <div class="passo"><b>Sondagem</b><span>Plano no mapa e GPS em cada furo</span></div>
+        <div class="passo"><b>Campo</b><span>Fotos com coordenada e boletim</span></div>
+        <div class="passo"><b>Laboratório</b><span>Ensaio lançado e calculado na hora</span></div>
+        <div class="passo"><b>Gestão</b><span>Conferência e aprovação do gestor</span></div>
+        <div class="passo"><b>Relatório</b><span>Laudos em PDF prontos para entregar</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="publicacoes" class="pubs" aria-labelledby="t-pubs" hidden>
+  <div class="cx">
+    <div class="cab">
+      <span class="rotulo">Publicações</span>
+      <h2 id="t-pubs">Obras, ensaios e novidades da Jotta</h2>
+      <p>O que estamos fazendo em campo, no laboratório e na tecnologia.</p>
+    </div>
+    <div class="pub-lista" id="pubLista"></div>
+  </div>
+</section>
+<div class="visor" id="visor" hidden><img alt=""><button type="button" aria-label="Fechar">✕</button></div>
+
+<section id="sobre" class="sobre" aria-labelledby="t-sobre">
+  <div class="cx sobre-grid">
+    <div class="sobre-fotos">
+      <img class="cap" src="img/capacete.jpg" alt="Capacete amarelo com a marca Jotta Engenharia" width="1100" height="874">
+    </div>
+    <div>
+      <span class="rotulo escuro">Sobre a Jotta</span>
+      <h2 id="t-sobre">Soluções em qualidade e tecnologia para obras</h2>
+      <p>A Jotta Engenharia (JSD Engenharia Ltda) reúne três frentes: laboratório físico de ensaios, gestão da qualidade e consultoria técnica para empresas de engenharia, e tecnologia, com sistemas próprios para o controle tecnológico.</p>
+      <p>À frente está o engenheiro <b>Jeferson Domingos</b>, responsável técnico com registro no CREA-RO, que atua como consultor em gestão da qualidade e também desenvolve os sistemas da Jotta.</p>
+      <div class="valores">
+        <div><b>Normas em dia</b>ABNT, DNIT e especificações da GOINFRA</div>
+        <div><b>Rastreabilidade</b>Quem fez, onde e quando, em cada ensaio</div>
+        <div><b>Perto da obra</b>Pimenta Bueno e região</div>
+        <div><b>Resposta rápida</b>Orçamento e laudo sem burocracia</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contato" class="contato" aria-labelledby="t-cont">
+  <div class="cx contato-grid">
+    <div>
+      <h2 id="t-cont">Solicite seu orçamento</h2>
+      <p>Conte qual é a obra e o que você precisa: ensaios, gestão da qualidade, consultoria ou sistemas. Tabela de preços e demais ensaios sob consulta.</p>
+      <a class="btn btn-pr" href="https://wa.me/5569993766279?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20Jotta%20Engenharia%20e%20gostaria%20de%20um%20or%C3%A7amento." target="_blank" rel="noopener"><svg><use href="#i-zap"/></svg>Chamar no WhatsApp</a>
+    </div>
+    <div class="dados">
+      <a href="https://wa.me/5569993766279" target="_blank" rel="noopener"><svg><use href="#i-zap"/></svg><div><small>WhatsApp</small><strong>(69) 99376-6279</strong></div></a>
+      <a href="mailto:eng.controle.tecnologico@gmail.com"><svg><use href="#i-mail"/></svg><div><small>E-mail</small><strong>eng.controle.tecnologico@gmail.com</strong></div></a>
+      <div><svg><use href="#i-pin"/></svg><div><small>Atendimento</small><strong>Pimenta Bueno (RO) e região</strong></div></div>
+      <div><svg><use href="#i-predio"/></svg><div><small>Empresa</small><strong>JSD Engenharia Ltda · CNPJ 69.825.334/0001-09</strong></div></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="cx">
+    <img src="img/logo-claro.png" alt="Jotta Engenharia" width="115" height="30" loading="lazy">
+    <span>© <span id="ano">2026</span> JSD Engenharia Ltda · CNPJ 69.825.334/0001-09 · Pimenta Bueno – RO</span>
+  </div>
+</footer>
+
+<a class="whats" href="https://wa.me/5569993766279?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20Jotta%20Engenharia." target="_blank" rel="noopener" aria-label="Falar no WhatsApp"><svg><use href="#i-zap"/></svg></a>
+
+<script>
+// abas do laboratório
+document.querySelectorAll('.aba').forEach(function (bt) {
+  bt.addEventListener('click', function () {
+    document.querySelectorAll('.aba').forEach(function (b) { b.setAttribute('aria-selected', b === bt ? 'true' : 'false'); });
+    document.querySelectorAll('.painel').forEach(function (p) { p.hidden = p.id !== bt.getAttribute('aria-controls'); });
+  });
+});
+// menu do celular
+var mb = document.querySelector('.menu-bt'), menu = document.getElementById('menu');
+mb.addEventListener('click', function () { var a = menu.classList.toggle('aberto'); mb.setAttribute('aria-expanded', a); });
+menu.addEventListener('click', function (e) { if (e.target.tagName === 'A') { menu.classList.remove('aberto'); mb.setAttribute('aria-expanded', 'false'); } });
+document.getElementById('ano').textContent = new Date().getFullYear();
+// ---------- publicações (Supabase: tabela "publicacoes", fotos no armazenamento público "site") ----------
+var SB = 'https://pvmukaszwldqgkiiltnq.supabase.co', SB_CHAVE = 'sb_publishable_1Pg3qgQLH6sX3UtWEekORQ_8knRep-b';
+if (window.__SB_URL) SB = window.__SB_URL;   // testes
+function esc(t) { return String(t == null ? '' : t).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
+function textoRico(t) {
+  return esc(t).replace(/(https?:\/\/[^\s<]+)/g, '<a href="$1" target="_blank" rel="noopener">$1</a>')
+    .replace(/(^|\s)#([\wÀ-ÿ]+)/g, '$1<span class="tag">#$2</span>');
+}
+function fotoUrl(c) { return SB + '/storage/v1/object/public/site/' + c.split('/').map(encodeURIComponent).join('/'); }
+function youtubeId(u) { var m = String(u || '').match(/(?:youtu\.be\/|v=|shorts\/|embed\/)([\w-]{11})/); return m ? m[1] : ''; }
+function dataBr(d) { try { return new Date(String(d).slice(0, 10) + 'T12:00:00').toLocaleDateString('pt-BR', { day: '2-digit', month: 'long', year: 'numeric' }); } catch (e) { return d; } }
+function montarPub(p) {
+  var fotos = p.fotos || [], yt = youtubeId(p.video), midia = '';
+  if (yt) midia = '<div class="pub-midia"><iframe src="https://www.youtube-nocookie.com/embed/' + yt + '" title="' + esc(p.titulo) + '" loading="lazy" allow="encrypted-media; picture-in-picture" allowfullscreen></iframe></div>';
+  else if (fotos.length) midia = '<div class="pub-midia"><img src="' + fotoUrl(fotos[0]) + '" alt="' + esc(p.titulo) + '" loading="lazy" data-foto>' +
+    (fotos.length > 1 ? '<span class="mais-fotos">' + fotos.length + ' fotos</span>' : '') + '</div>';
+  var minis = (fotos.length > 1 || (yt && fotos.length)) ? '<div class="pub-miniaturas">' + fotos.map(function (f, i) {
+    return '<img src="' + fotoUrl(f) + '" alt="" loading="lazy" data-mini="' + i + '"' + (!yt && i === 0 ? ' class="ativa"' : '') + '>'; }).join('') + '</div>' : '';
+  return '<article class="pub' + (p.fixado ? ' fixado' : '') + '" id="post-' + p.id + '">' + midia + minis +
+    '<div class="pub-corpo"><span class="pub-data">' + (p.fixado ? 'Em destaque · ' : '') + esc(dataBr(p.data)) + '</span>' +
+    '<h3>' + esc(p.titulo) + '</h3>' + (p.texto ? '<div class="pub-texto">' + textoRico(p.texto) + '</div>' : '') +
+    '<div class="pub-acoes">' + (p.texto && p.texto.length > 280 ? '<button type="button" data-ler>Ler mais</button>' : '') +
+    (p.link ? '<a href="' + esc(p.link) + '" target="_blank" rel="noopener">Ver a publicação original</a>' : '') +
+    '<button type="button" data-compartilhar="' + p.id + '">Compartilhar</button></div></div></article>';
+}
+function carregarPublicacoes() {
+  fetch(SB + '/rest/v1/publicacoes?select=id,titulo,texto,fotos,video,link,fixado,data&publicado=eq.true&order=fixado.desc,data.desc,criado_em.desc&limit=30',
+    { headers: { apikey: SB_CHAVE } })
+    .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+    .then(function (l) {
+      if (!l || !l.length) return;
+      document.getElementById('pubLista').innerHTML = l.map(montarPub).join('');
+      document.getElementById('publicacoes').hidden = false;
+      document.querySelectorAll('[data-so-com-posts]').forEach(function (a) { a.hidden = false; });
+      var alvo = location.hash && document.getElementById(location.hash.slice(1));
+      if (alvo) setTimeout(function () { alvo.scrollIntoView({ behavior: 'smooth' }); }, 200);
+    }).catch(function () { /* sem publicações ou sem internet: a seção fica escondida */ });
+}
+document.addEventListener('click', function (e) {
+  var t = e.target;
+  if (t.matches('[data-ler]')) { var tx = t.closest('.pub').querySelector('.pub-texto'); var a = tx.classList.toggle('aberto'); t.textContent = a ? 'Ler menos' : 'Ler mais'; }
+  if (t.matches('[data-mini]')) {
+    var pub = t.closest('.pub'), grande = pub.querySelector('[data-foto]');
+    if (grande) { grande.src = t.src; pub.querySelectorAll('[data-mini]').forEach(function (m) { m.classList.toggle('ativa', m === t); }); }
+    else abrirVisor(t.src);
+  }
+  if (t.matches('[data-foto]')) abrirVisor(t.src);
+  if (t.matches('[data-compartilhar]')) {
+    var url = location.origin + location.pathname + '#post-' + t.getAttribute('data-compartilhar');
+    var titulo = t.closest('.pub').querySelector('h3').textContent;
+    if (navigator.share) navigator.share({ title: titulo, url: url }).catch(function () {});
+    else if (navigator.clipboard) navigator.clipboard.writeText(url).then(function () { t.textContent = 'Link copiado'; setTimeout(function () { t.textContent = 'Compartilhar'; }, 2000); });
+  }
+  if (t.closest('#visor') && (t.tagName === 'BUTTON' || t.id === 'visor')) document.getElementById('visor').hidden = true;
+});
+function abrirVisor(src) { var v = document.getElementById('visor'); v.querySelector('img').src = src; v.hidden = false; }
+document.addEventListener('keydown', function (e) { if (e.key === 'Escape') document.getElementById('visor').hidden = true; });
+carregarPublicacoes();
+
+</script>
+</body>
+</html>

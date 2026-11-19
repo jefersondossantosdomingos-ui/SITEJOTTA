@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Publicar · Jotta Engenharia</title>
+<link rel="icon" href="img/icone.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--preto:#0E0F11;--grafite:#17191D;--linha:#2E323A;--amarelo:#F4B400;--branco:#fff;--texto:#E9EAEC;--mudo:#A4A8B1;--erro:#FF7A6B;--ok:#7BD88F}
+*{box-sizing:border-box}
+body{margin:0;background:var(--preto);color:var(--texto);font:400 15px/1.55 Inter,system-ui,Arial,sans-serif}
+h1,h2,h3{font-family:Montserrat,Arial,sans-serif;margin:0;color:var(--branco)}
+.cx{max-width:860px;margin:0 auto;padding:24px max(16px,env(safe-area-inset-left)) 60px max(16px,env(safe-area-inset-right))}
+header{display:flex;align-items:center;gap:14px;justify-content:space-between;margin-bottom:22px;flex-wrap:wrap}
+header img{height:34px}
+header .acoes{display:flex;gap:10px;flex-wrap:wrap}
+.caixa{background:var(--grafite);border:1px solid var(--linha);border-radius:14px;padding:22px;margin-bottom:20px}
+label{display:block;font:600 13px/1.3 Inter,sans-serif;color:var(--mudo);margin:14px 0 6px}
+input[type=text],input[type=email],input[type=password],input[type=url],input[type=date],textarea{width:100%;background:#0B0C0E;border:1px solid var(--linha);border-radius:10px;color:var(--branco);padding:12px 13px;font:inherit}
+textarea{min-height:200px;resize:vertical}
+input:focus,textarea:focus{outline:2px solid var(--amarelo);border-color:transparent}
+.linha{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.marcas{display:flex;gap:22px;flex-wrap:wrap;margin-top:16px}
+.marcas label{display:flex;gap:8px;align-items:center;margin:0;color:var(--texto)}
+.btn{display:inline-flex;align-items:center;gap:8px;border:0;border-radius:10px;padding:12px 18px;font:700 14px/1 Montserrat,sans-serif;cursor:pointer;text-decoration:none}
+.btn-am{background:var(--amarelo);color:var(--preto)}
+.btn-lin{background:none;border:1.5px solid var(--linha);color:var(--texto)}
+.btn-perigo{background:none;border:1.5px solid #6b2a24;color:var(--erro)}
+.btn:disabled{opacity:.5;cursor:wait}
+.fotos{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px}
+.foto{position:relative;width:110px;height:84px;border-radius:8px;overflow:hidden;background:#000}
+.foto img{width:100%;height:100%;object-fit:cover}
+.foto button{position:absolute;top:4px;right:4px;width:26px;height:26px;border-radius:50%;border:0;background:rgba(0,0,0,.75);color:#fff;cursor:pointer}
+.foto .esq{right:auto;left:4px}
+.foto .capa{position:absolute;left:4px;bottom:4px;background:var(--amarelo);color:var(--preto);font:700 10px/1 Montserrat,sans-serif;padding:4px 6px;border-radius:999px}
+.aviso{margin-top:14px;padding:12px 14px;border-radius:10px;font-weight:500}
+.aviso.erro{background:#2A1512;color:var(--erro)} .aviso.ok{background:#132617;color:var(--ok)}
+.item{display:flex;gap:14px;align-items:center;padding:14px 0;border-top:1px solid var(--linha);flex-wrap:wrap}
+.item:first-child{border-top:0}
+.item img{width:74px;height:56px;object-fit:cover;border-radius:8px;background:#000;flex:none}
+.item .info{flex:1;min-width:180px}
+.item .info b{display:block;color:var(--branco)}
+.item .info small{color:var(--mudo)}
+.item .bts{display:flex;gap:8px;flex-wrap:wrap}
+.item .bts .btn{padding:9px 12px;font-size:12px}
+.etq{display:inline-block;font:700 10px/1 Montserrat,sans-serif;padding:4px 7px;border-radius:999px;margin-left:6px;vertical-align:middle}
+.etq.oculto{background:#3a3d44;color:#ddd} .etq.fixo{background:var(--amarelo);color:var(--preto)}
+.confirma{width:100%;background:#2A1512;border-radius:10px;padding:10px 12px;color:var(--erro);display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+[hidden]{display:none!important}
+@media (max-width:600px){.linha{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="cx">
+  <header>
+    <a href="./"><img src="img/logo-claro.png" alt="Jotta Engenharia"></a>
+    <div class="acoes" id="topoAcoes" hidden>
+      <a class="btn btn-lin" href="./#publicacoes" target="_blank">Ver no site</a>
+      <button class="btn btn-lin" type="button" id="sair">Sair</button>
+    </div>
+  </header>
+
+  <!-- entrar -->
+  <form class="caixa" id="fEntrar" autocomplete="on">
+    <h2>Publicações do site</h2>
+    <p style="color:var(--mudo);margin:6px 0 0">Entre com o e-mail de dono do banco de dados.</p>
+    <label for="email">E-mail</label><input type="email" id="email" autocomplete="username" required>
+    <label for="senha">Senha</label><input type="password" id="senha" autocomplete="current-password" required>
+    <div style="margin-top:18px"><button class="btn btn-am" id="btEntrar">Entrar</button></div>
+    <div id="avEntrar"></div>
+  </form>
+
+  <!-- editor -->
+  <form class="caixa" id="fPost" hidden>
+    <h2 id="tEditor">Nova publicação</h2>
+    <label for="titulo">Título</label><input type="text" id="titulo" maxlength="140" required placeholder="Ex.: Ensaios de CAUQ na obra da BR-364">
+    <label for="texto">Texto (pode colar o texto do LinkedIn, com emojis e #hashtags)</label>
+    <textarea id="texto"></textarea>
+    <label>Fotos (a primeira é a capa · até 10)</label>
+    <input type="file" id="arqFotos" accept="image/*" multiple>
+    <div class="fotos" id="listaFotos"></div>
+    <div class="linha">
+      <div><label for="video">Vídeo do YouTube (link, opcional)</label><input type="url" id="video" placeholder="https://youtu.be/..."></div>
+      <div><label for="link">Link da publicação original (opcional)</label><input type="url" id="link" placeholder="https://www.linkedin.com/posts/..."></div>
+    </div>
+    <div class="linha">
+      <div><label for="data">Data</label><input type="date" id="data" required></div>
+      <div></div>
+    </div>
+    <div class="marcas">
+      <label><input type="checkbox" id="publicado" checked> Publicado (aparece no site)</label>
+      <label><input type="checkbox" id="fixado"> Em destaque (primeiro da lista)</label>
+    </div>
+    <div style="margin-top:20px;display:flex;gap:10px;flex-wrap:wrap">
+      <button class="btn btn-am" id="btSalvar">Publicar</button>
+      <button class="btn btn-lin" type="button" id="btNovo" hidden>Cancelar edição</button>
+    </div>
+    <div id="avPost"></div>
+  </form>
+
+  <div class="caixa" id="cxLista" hidden>
+    <h3>Publicações</h3>
+    <div id="lista" style="margin-top:8px"></div>
+  </div>
+</div>
+
+<script>
+var SB = window.__SB_URL || 'https://pvmukaszwldqgkiiltnq.supabase.co';
+var CHAVE = 'sb_publishable_1Pg3qgQLH6sX3UtWEekORQ_8knRep-b';
+var CHAVE_SESSAO = 'jotta-site-sessao';
+var sessao = null, posts = [], editando = null, fotos = [];   // fotos: {caminho} já enviadas ou {arquivo, url} novas
+var $ = function (id) { return document.getElementById(id); };
+function esc(t) { return String(t == null ? '' : t).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
+function aviso(id, tipo, msg) { $(id).innerHTML = msg ? '<div class="aviso ' + tipo + '">' + msg + '</div>' : ''; }
+function fotoUrl(c) { return SB + '/storage/v1/object/public/site/' + c.split('/').map(encodeURIComponent).join('/'); }
+function hoje() { var d = new Date(); return new Date(d.getTime() - d.getTimezoneOffset() * 60000).toISOString().slice(0, 10); }
+
+async function pedido(caminho, op) {
+  op = op || {};
+  var h = Object.assign({ apikey: CHAVE }, op.cab || {});
+  if (op.login !== false) { await renovar(); h.Authorization = 'Bearer ' + sessao.access_token; }
+  var corpo = op.corpo;
+  if (corpo !== undefined && !(corpo instanceof Blob) && typeof corpo !== 'string') { corpo = JSON.stringify(corpo); h['Content-Type'] = 'application/json'; }
+  var r;
+  try { r = await fetch(SB + caminho, { method: op.metodo || 'GET', headers: h, body: corpo }); }
+  catch (e) { throw new Error('Sem conexão com a internet.'); }
+  var txt = await r.text(), j = null;
+  try { j = txt ? JSON.parse(txt) : null; } catch (e) {}
+  if (!r.ok) {
+    var m = (j && (j.message || j.msg || j.error_description || j.error)) || ('Erro ' + r.status);
+    if (/invalid login|invalid_grant/i.test(m)) m = 'E-mail ou senha incorretos.';
+    if (/row-level security|violates|permission/i.test(m)) m = 'Este acesso não tem permissão para publicar.';
+    var er = new Error(m); er.status = r.status; throw er;
+  }
+  return j;
+}
+async function renovar() {
+  if (!sessao) throw new Error('Entre de novo.');
+  if (sessao.expires_at && sessao.expires_at * 1000 > Date.now() + 60000) return;
+  var s = await pedido('/auth/v1/token?grant_type=refresh_token', { metodo: 'POST', corpo: { refresh_token: sessao.refresh_token }, login: false });
+  guardarSessao(s);
+}
+function guardarSessao(s) { sessao = s; try { s ? localStorage.setItem(CHAVE_SESSAO, JSON.stringify(s)) : localStorage.removeItem(CHAVE_SESSAO); } catch (e) {} }
+
+$('fEntrar').onsubmit = async function (e) {
+  e.preventDefault();
+  var b = $('btEntrar'); b.disabled = true; aviso('avEntrar');
+  try {
+    var s = await pedido('/auth/v1/token?grant_type=password', { metodo: 'POST', corpo: { email: $('email').value.trim(), password: $('senha').value }, login: false });
+    guardarSessao(s);
+    await abrirEditor();
+  } catch (er) { aviso('avEntrar', 'erro', esc(er.message)); guardarSessao(null); }
+  b.disabled = false;
+};
+$('sair').onclick = function () { guardarSessao(null); location.reload(); };
+
+async function abrirEditor() {
+  var d = await pedido('/rest/v1/donos?select=id');
+  if (!d || !d.length) throw new Error('Este acesso não é o dono: só o dono publica no site.');
+  $('fEntrar').hidden = true; $('fPost').hidden = false; $('cxLista').hidden = false; $('topoAcoes').hidden = false;
+  limparEditor();
+  await carregarLista();
+}
+
+function limparEditor() {
+  editando = null; fotos = [];
+  ['titulo', 'texto', 'video', 'link'].forEach(function (k) { $(k).value = ''; });
+  $('data').value = hoje(); $('publicado').checked = true; $('fixado').checked = false;
+  $('tEditor').textContent = 'Nova publicação'; $('btSalvar').textContent = 'Publicar'; $('btNovo').hidden = true;
+  desenharFotos();
+}
+function desenharFotos() {
+  $('listaFotos').innerHTML = fotos.map(function (f, i) {
+    return '<div class="foto"><img src="' + (f.url || fotoUrl(f.caminho)) + '" alt="">' + (i === 0 ? '<span class="capa">capa</span>' : '<button type="button" class="esq" data-capa="' + i + '" title="Usar como capa">★</button>') +
+      '<button type="button" data-tirar="' + i + '" title="Tirar">✕</button></div>';
+  }).join('');
+}
+$('listaFotos').onclick = function (e) {
+  var t = e.target;
+  if (t.dataset.tirar !== undefined) { fotos.splice(+t.dataset.tirar, 1); desenharFotos(); }
+  if (t.dataset.capa !== undefined) { var f = fotos.splice(+t.dataset.capa, 1)[0]; fotos.unshift(f); desenharFotos(); }
+};
+$('arqFotos').onchange = function () {
+  Array.from(this.files).forEach(function (a) { if (fotos.length < 10) fotos.push({ arquivo: a, url: URL.createObjectURL(a) }); });
+  this.value = ''; desenharFotos();
+};
+
+// reduz a foto (lado maior 1600 px, JPEG) antes de enviar
+function reduzir(arquivo) {
+  return new Promise(function (ok, falha) {
+    var img = new Image();
+    img.onload = function () {
+      var k = Math.min(1, 1600 / Math.max(img.width, img.height)), c = document.createElement('canvas');
+      c.width = Math.round(img.width * k); c.height = Math.round(img.height * k);
+      c.getContext('2d').drawImage(img, 0, 0, c.width, c.height);
+      c.toBlob(function (b) { b ? ok(b) : falha(new Error('Não consegui ler a foto.')); }, 'image/jpeg', 0.84);
+    };
+    img.onerror = function () { falha(new Error('Arquivo de imagem inválido: ' + arquivo.name)); };
+    img.src = URL.createObjectURL(arquivo);
+  });
+}
+function novoId() { return (crypto.randomUUID ? crypto.randomUUID() : Date.now() + '-' + Math.random().toString(16).slice(2)); }
+
+$('fPost').onsubmit = async function (e) {
+  e.preventDefault();
+  var b = $('btSalvar'); b.disabled = true; aviso('avPost');
+  try {
+    var caminhos = [];
+    for (var i = 0; i < fotos.length; i++) {
+      var f = fotos[i];
+      if (f.caminho) { caminhos.push(f.caminho); continue; }
+      b.textContent = 'Enviando foto ' + (i + 1) + ' de ' + fotos.length + '…';
+      var blob = await reduzir(f.arquivo), cam = 'publicacoes/' + novoId() + '.jpg';
+      await pedido('/storage/v1/object/site/' + cam, { metodo: 'POST', corpo: blob, cab: { 'Content-Type': 'image/jpeg', 'x-upsert': 'false' } });
+      f.caminho = cam; caminhos.push(cam);
+    }
+    var dado = { titulo: $('titulo').value.trim(), texto: $('texto').value.trim(), fotos: caminhos, video: $('video').value.trim() || null,
+      link: $('link').value.trim() || null, data: $('data').value || hoje(), publicado: $('publicado').checked, fixado: $('fixado').checked };
+    if (!dado.titulo) throw new Error('Escreva o título.');
+    if (editando) {
+      var antes = (posts.find(function (p) { return p.id === editando; }) || {}).fotos || [];
+      await pedido('/rest/v1/publicacoes?id=eq.' + editando, { metodo: 'PATCH', corpo: dado, cab: { Prefer: 'return=minimal' } });
+      var sobra = antes.filter(function (c) { return caminhos.indexOf(c) < 0; });
+      if (sobra.length) await pedido('/storage/v1/object/site', { metodo: 'DELETE', corpo: { prefixes: sobra } }).catch(function () {});
+    } else {
+      await pedido('/rest/v1/publicacoes', { metodo: 'POST', corpo: dado, cab: { Prefer: 'return=minimal' } });
+    }
+    aviso('avPost', 'ok', editando ? 'Publicação atualizada.' : (dado.publicado ? 'Publicado! Já aparece no site.' : 'Guardado (oculto do site).'));
+    limparEditor(); await carregarLista();
+  } catch (er) { aviso('avPost', 'erro', esc(er.message)); }
+  b.disabled = false; b.textContent = editando ? 'Salvar alterações' : 'Publicar';
+};
+$('btNovo').onclick = function () { limparEditor(); aviso('avPost'); };
+
+async function carregarLista() {
+  posts = await pedido('/rest/v1/publicacoes?select=*&order=fixado.desc,data.desc,criado_em.desc') || [];
+  $('lista').innerHTML = posts.length ? posts.map(function (p) {
+    return '<div class="item" data-id="' + p.id + '">' + (p.fotos && p.fotos[0] ? '<img src="' + fotoUrl(p.fotos[0]) + '" alt="">' : '<img alt="">') +
+      '<div class="info"><b>' + esc(p.titulo) + (p.publicado ? '' : '<span class="etq oculto">oculto</span>') + (p.fixado ? '<span class="etq fixo">destaque</span>' : '') + '</b>' +
+      '<small>' + esc(String(p.data || '').slice(0, 10)) + ' · ' + (p.fotos || []).length + ' foto(s)' + (p.video ? ' · vídeo' : '') + '</small></div>' +
+      '<div class="bts"><button class="btn btn-lin" type="button" data-editar>Editar</button>' +
+      '<button class="btn btn-lin" type="button" data-alternar>' + (p.publicado ? 'Ocultar' : 'Mostrar') + '</button>' +
+      '<button class="btn btn-perigo" type="button" data-apagar>Apagar</button></div></div>';
+  }).join('') : '<p style="color:var(--mudo)">Nenhuma publicação ainda.</p>';
+}
+$('lista').onclick = async function (e) {
+  var t = e.target, it = t.closest('.item'); if (!it) return;
+  var p = posts.find(function (x) { return x.id === it.dataset.id; });
+  try {
+    if (t.matches('[data-editar]')) {
+      editando = p.id; fotos = (p.fotos || []).map(function (c) { return { caminho: c }; });
+      $('titulo').value = p.titulo; $('texto').value = p.texto || ''; $('video').value = p.video || ''; $('link').value = p.link || '';
+      $('data').value = String(p.data || '').slice(0, 10); $('publicado').checked = p.publicado; $('fixado').checked = p.fixado;
+      $('tEditor').textContent = 'Editar publicação'; $('btSalvar').textContent = 'Salvar alterações'; $('btNovo').hidden = false;
+      desenharFotos(); window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    if (t.matches('[data-alternar]')) {
+      await pedido('/rest/v1/publicacoes?id=eq.' + p.id, { metodo: 'PATCH', corpo: { publicado: !p.publicado }, cab: { Prefer: 'return=minimal' } });
+      await carregarLista();
+    }
+    if (t.matches('[data-apagar]')) {
+      if (it.querySelector('.confirma')) return;
+      it.insertAdjacentHTML('beforeend', '<div class="confirma">Apagar "' + esc(p.titulo) + '" e as fotos dela? <button class="btn btn-perigo" type="button" data-sim>Apagar de vez</button><button class="btn btn-lin" type="button" data-nao>Cancelar</button></div>');
+    }
+    if (t.matches('[data-nao]')) t.closest('.confirma').remove();
+    if (t.matches('[data-sim]')) {
+      await pedido('/rest/v1/publicacoes?id=eq.' + p.id, { metodo: 'DELETE', cab: { Prefer: 'return=minimal' } });
+      if (p.fotos && p.fotos.length) await pedido('/storage/v1/object/site', { metodo: 'DELETE', corpo: { prefixes: p.fotos } }).catch(function () {});
+      if (editando === p.id) limparEditor();
+      await carregarLista();
+    }
+  } catch (er) { aviso('avPost', 'erro', esc(er.message)); }
+};
+
+// já estava logado neste aparelho?
+try { sessao = JSON.parse(localStorage.getItem(CHAVE_SESSAO) || 'null'); } catch (e) {}
+if (sessao) abrirEditor().catch(function (er) { guardarSessao(null); aviso('avEntrar', 'erro', esc(er.message)); });
+</script>
+</body>
+</html>
