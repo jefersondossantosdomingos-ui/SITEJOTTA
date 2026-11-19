@@ -51,7 +51,8 @@ h1,h2,h3,.marca{font-family:Montserrat,"Segoe UI",Arial,sans-serif;line-height:1
 .topo{position:sticky;top:0;z-index:50;background:rgba(14,15,17,.92);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.06)}
 .topo .cx{display:flex;align-items:center;gap:24px;height:68px}
 .topo .logo img{height:38px;width:auto}
-.topo nav{margin-left:auto;display:flex;gap:26px}
+.topo nav{margin-left:auto;display:flex;gap:22px}
+.topo nav a{white-space:nowrap}
 .topo nav a{color:var(--texto);text-decoration:none;font:600 14px/1 Montserrat,sans-serif;opacity:.85}
 .topo nav a:hover{color:var(--amarelo);opacity:1}
 .topo nav a[hidden]{display:none}
@@ -63,7 +64,7 @@ h1,h2,h3,.marca{font-family:Montserrat,"Segoe UI",Arial,sans-serif;line-height:1
 .hero{position:relative;background:radial-gradient(120% 90% at 85% 40%,#1F2230 0%,var(--preto) 60%);color:var(--branco);overflow:hidden}
 .hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:44px 44px;-webkit-mask-image:linear-gradient(90deg,#000,transparent 70%);mask-image:linear-gradient(90deg,#000,transparent 70%)}
 .hero .cx{position:relative;display:grid;grid-template-columns:1.25fr .75fr;gap:40px;align-items:end;padding-top:90px;padding-bottom:0}
-.hero .texto{padding-bottom:110px}
+.hero .texto{padding-bottom:120px}
 .hero .foto{position:relative;align-self:end}
 .hero .foto img{width:100%;max-width:470px;margin-left:auto;height:auto;border-radius:22px 22px 0 0;-webkit-mask-image:linear-gradient(180deg,#000 72%,transparent 100%);mask-image:linear-gradient(180deg,#000 72%,transparent 100%)}
 .hero .foto::before{content:"";position:absolute;right:-30px;bottom:40px;width:78%;height:70%;border:3px solid var(--amarelo);border-radius:24px;transform:rotate(4deg);opacity:.55}
@@ -73,6 +74,25 @@ h1,h2,h3,.marca{font-family:Montserrat,"Segoe UI",Arial,sans-serif;line-height:1
 .hero h1 em{font-style:normal;color:var(--amarelo)}
 .hero p.lead{font-size:clamp(16px,1.6vw,19px);color:#D4D6DA;max-width:58ch;margin:0 0 34px}
 .hero .acoes{display:flex;flex-wrap:wrap;gap:14px}
+.slides{display:grid}
+.slide{grid-area:1/1;opacity:0;visibility:hidden;transition:opacity .6s ease,visibility .6s}
+.slide.ativa{opacity:1;visibility:visible}
+.slide .h1{font-family:Montserrat,sans-serif;font-size:clamp(30px,4.6vw,52px);font-weight:800;line-height:1.1;max-width:20ch;margin:18px 0 20px;color:var(--branco);text-wrap:balance}
+.slide .foto.post img{aspect-ratio:4/3.6;object-fit:cover;-webkit-mask-image:none;mask-image:none;border-radius:22px}
+.hero .foto img{position:relative;z-index:1}
+.hero .foto figcaption{z-index:2}
+.slide .foto.sem-foto::before{display:none}
+.slide .foto.post{align-self:center;margin-bottom:60px}
+.slide .foto.post figcaption{bottom:-14px}
+.slide .foto.sem-foto{display:grid;place-items:center;aspect-ratio:4/3.6;max-width:470px;width:100%;margin-left:auto;border-radius:22px;background:linear-gradient(135deg,#1C1F26,#121316);border:1px solid var(--linha)}
+.slide .foto.sem-foto img{width:38%;aspect-ratio:auto;border-radius:0}
+.hero-ctrl{position:absolute;left:0;right:0;bottom:26px;z-index:3;display:flex;justify-content:center;align-items:center;gap:14px}
+.hero-ctrl[hidden]{display:none}
+.hero-ctrl button{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);color:#fff;width:38px;height:38px;border-radius:50%;cursor:pointer;font:700 16px/1 Montserrat,sans-serif}
+.hero-ctrl button:hover{border-color:var(--amarelo);color:var(--amarelo)}
+.hero-ctrl .pontos{display:flex;gap:8px}
+.hero-ctrl .pontos button{width:10px;height:10px;padding:0;border:0;background:rgba(255,255,255,.3)}
+.hero-ctrl .pontos button[aria-current="true"]{background:var(--amarelo);width:28px;border-radius:999px}
 .faixa-estrada{height:10px;background:repeating-linear-gradient(90deg,var(--amarelo) 0 46px,transparent 46px 74px),var(--preto);background-size:auto;background-position:center;opacity:.95}
 .selos{display:flex;flex-wrap:wrap;gap:12px 28px;margin-top:46px;color:#C9CBD0;font-size:14px}
 .selos span{display:flex;align-items:center;gap:8px}
@@ -210,6 +230,13 @@ footer img{height:30px;width:auto}
 .whats{position:fixed;right:max(18px,env(safe-area-inset-right));bottom:max(18px,env(safe-area-inset-bottom));z-index:60;width:58px;height:58px;border-radius:50%;background:#25D366;display:grid;place-items:center;box-shadow:0 10px 26px rgba(0,0,0,.3)}
 .whats svg{width:32px;height:32px;color:#fff}
 
+@media (max-width:1080px){
+  .topo nav{display:none;position:absolute;top:68px;left:0;right:0;flex-direction:column;gap:0;background:var(--preto);border-bottom:1px solid var(--linha)}
+  .topo nav.aberto{display:flex}
+  .topo nav a{padding:16px max(20px,env(safe-area-inset-left));border-top:1px solid var(--linha)}
+  .menu-bt{display:block;margin-left:auto}
+  .topo .btn{margin-left:0}
+}
 @media (max-width:960px){
   .frentes,.sobre-grid,.contato-grid{grid-template-columns:1fr}
   .publico{margin-top:-10px}
@@ -228,10 +255,6 @@ footer img{height:30px;width:auto}
   .hero .texto{padding-top:20px}
 }
 @media (max-width:760px){
-  .topo nav{display:none;position:absolute;top:68px;left:0;right:0;flex-direction:column;gap:0;background:var(--preto);border-bottom:1px solid var(--linha)}
-  .topo nav.aberto{display:flex}
-  .topo nav a{padding:16px 20px;border-top:1px solid var(--linha)}
-  .menu-bt{display:block}
   .topo .btn{display:none}
   .ensaios{grid-template-columns:1fr}
   .ensaio:nth-child(odd){border-right:0}
@@ -281,7 +304,9 @@ footer img{height:30px;width:auto}
 </header>
 
 <main id="inicio">
-<section class="hero" aria-labelledby="t-hero">
+<section class="hero" aria-labelledby="t-hero" aria-roledescription="carrossel">
+ <div class="slides" id="slides">
+ <div class="slide ativa" aria-roledescription="slide">
   <div class="cx">
    <div class="texto">
     <span class="rotulo">Pimenta Bueno · Rondônia e região</span>
@@ -302,6 +327,13 @@ footer img{height:30px;width:auto}
     <figcaption>Jeferson Domingos<small>Sócio Adm · JSD ENGENHARIA LTDA</small></figcaption>
    </figure>
   </div>
+ </div>
+ </div>
+ <div class="hero-ctrl" id="heroCtrl" hidden>
+  <button type="button" data-hero="-1" aria-label="Anterior">‹</button>
+  <div class="pontos" id="heroPontos"></div>
+  <button type="button" data-hero="1" aria-label="Próximo">›</button>
+ </div>
 </section>
 <div class="faixa-estrada" aria-hidden="true"></div>
 
@@ -586,6 +618,7 @@ function carregarPublicacoes() {
     .then(function (l) {
       if (!l || !l.length) return;
       document.getElementById('pubLista').innerHTML = l.map(montarPub).join('');
+      montarSlidesPosts(l);
       document.getElementById('publicacoes').hidden = false;
       document.querySelectorAll('[data-so-com-posts]').forEach(function (a) { a.hidden = false; });
       var alvo = location.hash && document.getElementById(location.hash.slice(1));
@@ -611,6 +644,60 @@ document.addEventListener('click', function (e) {
 });
 function abrirVisor(src) { var v = document.getElementById('visor'); v.querySelector('img').src = src; v.hidden = false; }
 document.addEventListener('keydown', function (e) { if (e.key === 'Escape') document.getElementById('visor').hidden = true; });
+
+// ---------- carrossel do topo: a apresentação + as publicações mais recentes, alternando ----------
+var HERO = { i: 0, timer: null, pausa: false };
+function montarSlidesPosts(l) {
+  var box = document.getElementById('slides');
+  l.slice(0, 4).forEach(function (p) {
+    var fotos = p.fotos || [], yt = youtubeId(p.video);
+    var capa = fotos[0] ? fotoUrl(fotos[0]) : (yt ? 'https://i.ytimg.com/vi/' + yt + '/hqdefault.jpg' : '');
+    var resumo = String(p.texto || '').replace(/\s+/g, ' ').trim();
+    if (resumo.length > 210) resumo = resumo.slice(0, 207).replace(/\s+\S*$/, '') + '…';
+    var d = document.createElement('div');
+    d.className = 'slide'; d.setAttribute('aria-roledescription', 'slide'); d.setAttribute('aria-hidden', 'true');
+    d.innerHTML = '<div class="cx"><div class="texto"><span class="rotulo">Publicação · ' + esc(dataBr(p.data)) + '</span>' +
+      '<p class="h1">' + esc(p.titulo) + '</p>' + (resumo ? '<p class="lead">' + esc(resumo) + '</p>' : '') +
+      '<div class="acoes"><a class="btn btn-am" href="#post-' + p.id + '">Ler a publicação</a><a class="btn btn-linha" href="#publicacoes">Ver todas</a></div></div>' +
+      (capa ? '<figure class="foto post"><img src="' + capa + '" alt="' + esc(p.titulo) + '" loading="lazy"></figure>'
+            : '<figure class="foto sem-foto"><img src="img/icone.svg" alt=""></figure>') + '</div>';
+    box.appendChild(d);
+  });
+  var n = box.children.length;
+  if (n < 2) return;
+  var pts = document.getElementById('heroPontos');
+  for (var k = 0; k < n; k++) pts.insertAdjacentHTML('beforeend', '<button type="button" data-ir="' + k + '" aria-label="Slide ' + (k + 1) + '"' + (k === 0 ? ' aria-current="true"' : '') + '></button>');
+  document.getElementById('heroCtrl').hidden = false;
+  iniciarCarrossel();
+}
+function irSlide(k) {
+  var sl = document.getElementById('slides').children, n = sl.length;
+  HERO.i = (k + n) % n;
+  for (var j = 0; j < n; j++) { sl[j].classList.toggle('ativa', j === HERO.i); sl[j].setAttribute('aria-hidden', j === HERO.i ? 'false' : 'true'); }
+  document.querySelectorAll('#heroPontos button').forEach(function (b, j) { b.setAttribute('aria-current', j === HERO.i ? 'true' : 'false'); });
+}
+function iniciarCarrossel() {
+  if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  clearInterval(HERO.timer);
+  HERO.timer = setInterval(function () { if (!HERO.pausa && !document.hidden) irSlide(HERO.i + 1); }, window.__heroTempo || 7000);
+}
+(function () {
+  var hero = document.querySelector('.hero');
+  hero.addEventListener('mouseenter', function () { HERO.pausa = true; });
+  hero.addEventListener('mouseleave', function () { HERO.pausa = false; });
+  hero.addEventListener('focusin', function () { HERO.pausa = true; });
+  hero.addEventListener('focusout', function () { HERO.pausa = false; });
+  hero.addEventListener('click', function (e) {
+    var b = e.target.closest('[data-hero],[data-ir]'); if (!b) return;
+    irSlide(b.hasAttribute('data-ir') ? +b.getAttribute('data-ir') : HERO.i + (+b.getAttribute('data-hero'))); iniciarCarrossel();
+  });
+  var x0 = null;
+  hero.addEventListener('touchstart', function (e) { x0 = e.touches[0].clientX; }, { passive: true });
+  hero.addEventListener('touchend', function (e) {
+    if (x0 === null) return; var dx = e.changedTouches[0].clientX - x0; x0 = null;
+    if (Math.abs(dx) > 50 && document.getElementById('slides').children.length > 1) { irSlide(HERO.i + (dx < 0 ? 1 : -1)); iniciarCarrossel(); }
+  }, { passive: true });
+})();
 carregarPublicacoes();
 
 </script>
