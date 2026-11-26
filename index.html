@@ -211,6 +211,20 @@ section{padding:96px 0}
 .valores b{display:block;font:700 15px/1.3 Montserrat,sans-serif;color:var(--tinta);margin-bottom:2px}
 
 /* contato */
+/* clientes e parceiros: faixa de logos que passa sozinha */
+.clientes{background:var(--papel-2);padding:72px 0 80px;border-top:1px solid var(--borda)}
+.clientes .cab{text-align:center;margin-bottom:34px}
+.clientes h2{font-size:clamp(26px,3vw,36px);font-weight:800;margin:0}
+.marquee{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.faixa{display:flex;align-items:center;width:max-content;margin:0;padding:0;list-style:none;animation:rolar var(--dur,40s) linear infinite}
+.marquee:hover .faixa,.marquee:focus-within .faixa{animation-play-state:paused}
+.faixa li{flex:none;display:flex;align-items:center;justify-content:center;height:96px;padding:0 44px}
+.faixa img{height:64px;width:auto;max-width:none;transition:transform .2s}
+.faixa li:hover img{transform:scale(1.06)}
+.faixa li.alto img{height:88px}
+@keyframes rolar{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (max-width:640px){.faixa li{height:72px;padding:0 26px}.faixa img{height:44px}.faixa li.alto img{height:62px}}
+@media (prefers-reduced-motion:reduce){.faixa{animation:none;flex-wrap:wrap;justify-content:center;width:auto}.faixa [aria-hidden="true"]{display:none}.marquee{-webkit-mask-image:none;mask-image:none}}
 .contato{background:var(--amarelo);color:var(--preto);padding:84px 0}
 .contato-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center}
 .contato h2{font-size:clamp(30px,4vw,48px);font-weight:800;margin-bottom:14px}
@@ -547,6 +561,25 @@ footer img{height:30px;width:auto}
   </div>
 </section>
 
+<section id="clientes" class="clientes" aria-labelledby="t-cli">
+  <div class="cx cab">
+    <h2 id="t-cli">Clientes e parceiros</h2>
+  </div>
+  <div class="marquee">
+    <!-- uma linha por logo (img/parceiros/); o site repete a faixa sozinho para ela não acabar -->
+    <ul class="faixa" id="faixaCli">
+      <li><img src="img/parceiros/consorcio-solucao-dor-lote8.png" alt="Consórcio Solução DOR Lote 8" width="630" height="140" loading="lazy"></li>
+      <li><img src="img/parceiros/nacon-sondagens.png" alt="NACON Sondagens" width="515" height="140" loading="lazy"></li>
+      <li><img src="img/parceiros/tlt-controle-tecnologico.png" alt="TLT Controle Tecnológico e Consultoria" width="363" height="140" loading="lazy"></li>
+      <li><img src="img/parceiros/control-tech.png" alt="Control Tech Controle Tecnológico" width="937" height="140" loading="lazy"></li>
+      <li><img src="img/parceiros/llucena-infraestrutura.png" alt="LLucena Infraestrutura" width="431" height="140" loading="lazy"></li>
+      <li class="alto"><img src="img/parceiros/lenci-labendz.png" alt="Lenci &amp; Labendz Terraplenagem" width="140" height="140" loading="lazy"></li>
+      <!-- MT Consultoria: entra quando tiver a logo
+      <li><img src="img/parceiros/mt-consultoria.png" alt="MT Consultoria" loading="lazy"></li> -->
+    </ul>
+  </div>
+</section>
+
 <section id="contato" class="contato" aria-labelledby="t-cont">
   <div class="cx contato-grid">
     <div>
@@ -700,6 +733,17 @@ function iniciarCarrossel() {
 })();
 carregarPublicacoes();
 
+</script>
+<script>
+/* faixa de clientes: repete as logos (a 2ª cópia é só visual) e passa a ~45 px/s, qualquer que seja o número de logos */
+(function () {
+  var f = document.getElementById('faixaCli'); if (!f) return;
+  var itens = Array.prototype.slice.call(f.children);
+  while (f.children.length < 8) itens.forEach(function (li) { var c = li.cloneNode(true); c.setAttribute('aria-hidden', 'true'); c.querySelector('img').alt = ''; f.appendChild(c); });   // poucas logos: enche a tela
+  Array.prototype.slice.call(f.children).forEach(function (li) { var c = li.cloneNode(true); c.setAttribute('aria-hidden', 'true'); c.querySelector('img').alt = ''; f.appendChild(c); });
+  function vel() { f.style.setProperty('--dur', Math.max(20, (f.scrollWidth / 2) / 45) + 's'); }
+  if (document.readyState === 'complete') vel(); else window.addEventListener('load', vel);
+})();
 </script>
 </body>
 </html>
