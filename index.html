@@ -215,6 +215,10 @@ section{padding:96px 0}
 .clientes{background:var(--papel-2);padding:72px 0 80px;border-top:1px solid var(--borda)}
 .clientes .cab{text-align:center;margin-bottom:34px}
 .clientes h2{font-size:clamp(26px,3vw,36px);font-weight:800;margin:0}
+/* no alto da página, logo abaixo do menu: faixa mais baixa para o carrossel do topo continuar à vista */
+.clientes.no-topo{padding:22px 0 26px;border-top:0;border-bottom:1px solid var(--borda)}
+.clientes.no-topo .cab{margin-bottom:16px}
+.clientes.no-topo h2{font-size:clamp(17px,1.6vw,21px);letter-spacing:.02em}
 .marquee{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
 .faixa{display:flex;align-items:center;width:max-content;margin:0;padding:0;list-style:none;animation:rolar var(--dur,40s) linear infinite}
 .marquee:hover .faixa,.marquee:focus-within .faixa{animation-play-state:paused}
@@ -318,6 +322,25 @@ footer img{height:30px;width:auto}
 </header>
 
 <main id="inicio">
+<section id="clientes" class="clientes no-topo" aria-labelledby="t-cli">
+  <div class="cx cab">
+    <h2 id="t-cli">Clientes e parceiros</h2>
+  </div>
+  <div class="marquee">
+    <!-- uma linha por logo (img/parceiros/); o site repete a faixa sozinho para ela não acabar -->
+    <ul class="faixa" id="faixaCli">
+      <li><img src="img/parceiros/consorcio-solucao-dor-lote8.png" alt="Consórcio Solução DOR Lote 8" width="630" height="140"></li>
+      <li><img src="img/parceiros/nacon-sondagens.png" alt="NACON Sondagens" width="515" height="140"></li>
+      <li><img src="img/parceiros/tlt-controle-tecnologico.png" alt="TLT Controle Tecnológico e Consultoria" width="363" height="140"></li>
+      <li><img src="img/parceiros/control-tech.png" alt="Control Tech Controle Tecnológico" width="937" height="140"></li>
+      <li><img src="img/parceiros/llucena-infraestrutura.png" alt="LLucena Infraestrutura" width="431" height="140"></li>
+      <li class="alto"><img src="img/parceiros/lenci-labendz.png" alt="Lenci &amp; Labendz Terraplenagem" width="140" height="140"></li>
+      <!-- MT Consultoria: entra quando tiver a logo
+      <li><img src="img/parceiros/mt-consultoria.png" alt="MT Consultoria"></li> -->
+    </ul>
+  </div>
+</section>
+
 <section class="hero" aria-labelledby="t-hero" aria-roledescription="carrossel">
  <div class="slides" id="slides">
  <div class="slide ativa" aria-roledescription="slide">
@@ -526,25 +549,6 @@ footer img{height:30px;width:auto}
         <div class="passo"><b>Relatório</b><span>Laudos em PDF prontos para entregar</span></div>
       </div>
     </div>
-  </div>
-</section>
-
-<section id="clientes" class="clientes" aria-labelledby="t-cli">
-  <div class="cx cab">
-    <h2 id="t-cli">Clientes e parceiros</h2>
-  </div>
-  <div class="marquee">
-    <!-- uma linha por logo (img/parceiros/); o site repete a faixa sozinho para ela não acabar -->
-    <ul class="faixa" id="faixaCli">
-      <li><img src="img/parceiros/consorcio-solucao-dor-lote8.png" alt="Consórcio Solução DOR Lote 8" width="630" height="140" loading="lazy"></li>
-      <li><img src="img/parceiros/nacon-sondagens.png" alt="NACON Sondagens" width="515" height="140" loading="lazy"></li>
-      <li><img src="img/parceiros/tlt-controle-tecnologico.png" alt="TLT Controle Tecnológico e Consultoria" width="363" height="140" loading="lazy"></li>
-      <li><img src="img/parceiros/control-tech.png" alt="Control Tech Controle Tecnológico" width="937" height="140" loading="lazy"></li>
-      <li><img src="img/parceiros/llucena-infraestrutura.png" alt="LLucena Infraestrutura" width="431" height="140" loading="lazy"></li>
-      <li class="alto"><img src="img/parceiros/lenci-labendz.png" alt="Lenci &amp; Labendz Terraplenagem" width="140" height="140" loading="lazy"></li>
-      <!-- MT Consultoria: entra quando tiver a logo
-      <li><img src="img/parceiros/mt-consultoria.png" alt="MT Consultoria" loading="lazy"></li> -->
-    </ul>
   </div>
 </section>
 
